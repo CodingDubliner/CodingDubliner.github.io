@@ -1,0 +1,354 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="day02 【数据类型转换、运算符、方法入门】"><meta name="keywords" content="Java"><meta name="author" content="Dubliner"><meta name="copyright" content="Dubliner"><title>day02 【数据类型转换、运算符、方法入门】 | Dubliner</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script><!-- hexo-inject:begin --><!-- hexo-inject:end -->var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今日内容"><span class="toc-number">1.</span> <span class="toc-text">今日内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#教学目标"><span class="toc-number">2.</span> <span class="toc-text">教学目标</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章-数据类型转换"><span class="toc-number"></span> <span class="toc-text">第一章 数据类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-自动转换-也叫隐式类型转换-系统悄悄自动做的你看不到"><span class="toc-number">1.</span> <span class="toc-text">1.1 自动转换(也叫隐式类型转换,系统悄悄自动做的你看不到)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#转换原理图解"><span class="toc-number">1.1.</span> <span class="toc-text">转换原理图解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转换规则"><span class="toc-number">1.2.</span> <span class="toc-text">转换规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-强制转换"><span class="toc-number">2.</span> <span class="toc-text">1.2 强制转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#转换原理图解-1"><span class="toc-number">2.1.</span> <span class="toc-text">转换原理图解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#强烈注意"><span class="toc-number">2.2.</span> <span class="toc-text">强烈注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-ASCII编码表"><span class="toc-number">3.</span> <span class="toc-text">1.3 ASCII编码表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二章-运算符"><span class="toc-number"></span> <span class="toc-text">第二章 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-算数运算符"><span class="toc-number">1.</span> <span class="toc-text">2.1 算数运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-赋值运算符"><span class="toc-number">2.</span> <span class="toc-text">2.2 赋值运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-比较运算符"><span class="toc-number">3.</span> <span class="toc-text">2.3 比较运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-逻辑运算符"><span class="toc-number">4.</span> <span class="toc-text">2.4 逻辑运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-三元运算符"><span class="toc-number">5.</span> <span class="toc-text">2.5 三元运算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三章-方法入门"><span class="toc-number"></span> <span class="toc-text">第三章 方法入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-概述"><span class="toc-number">1.</span> <span class="toc-text">3.1 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-方法的定义"><span class="toc-number">2.</span> <span class="toc-text">3.2 方法的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-方法的调用"><span class="toc-number">3.</span> <span class="toc-text">3.3 方法的调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-调用练习"><span class="toc-number">4.</span> <span class="toc-text">3.4 调用练习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-注意事项"><span class="toc-number">5.</span> <span class="toc-text">3.5 注意事项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第四章-JShell脚本工具"><span class="toc-number"></span> <span class="toc-text">第四章 JShell脚本工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JShell脚本工具是JDK9的新特性"><span class="toc-number">0.1.</span> <span class="toc-text">JShell脚本工具是JDK9的新特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第五章-扩展知识点"><span class="toc-number"></span> <span class="toc-text">第五章 扩展知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-符号的扩展"><span class="toc-number">1.</span> <span class="toc-text">5.1 +=符号的扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-常量和变量的运算"><span class="toc-number">2.</span> <span class="toc-text">5.2 常量和变量的运算</span></a></li></ol></li></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/head.jpg"></div><div class="author-info__name text-center">Dubliner</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">10</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">2</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">4</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Dubliner</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span></div><div id="post-info"><div id="post-title">day02 【数据类型转换、运算符、方法入门】</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-12-21</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Java/">Java</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Java/基础/">基础</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h2><ul>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><li>数据类型转换</li>
+<li>算数运算符</li>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+<li>三元运算符</li>
+<li>简单方法定义和调用</li>
+</ul>
+<h2 id="教学目标"><a href="#教学目标" class="headerlink" title="教学目标"></a>教学目标</h2><ul>
+<li>[ ] 理解数据类型的强制转换</li>
+<li>[ ] 理解数据类型的自动转换</li>
+<li>[ ] 了解ASCII编码表</li>
+<li>[ ] 理解int类型和char类型的运算原理</li>
+<li>[ ] 理解运算符++ —的运算方式</li>
+<li>[ ] 理解+符号在字符串中的作用</li>
+<li>[ ] 理解比较运算符</li>
+<li>[ ] 理解逻辑运算符</li>
+<li>[ ] 掌握三元运算符的格式和计算结果</li>
+<li>[ ] 了解方法的概念</li>
+<li>[ ] 掌握无返回值无参数方法的定义格式</li>
+<li>[ ] 了解方法定义的注意事项<h1 id="第一章-数据类型转换"><a href="#第一章-数据类型转换" class="headerlink" title="第一章 数据类型转换"></a>第一章 数据类型转换</h1></li>
+</ul>
+<p>Java程序中要求参与的计算的数据，必须要保证数据类型的一致性，如果数据类型不一致将发生类型的转换。</p>
+<h2 id="1-1-自动转换-也叫隐式类型转换-系统悄悄自动做的你看不到"><a href="#1-1-自动转换-也叫隐式类型转换-系统悄悄自动做的你看不到" class="headerlink" title="1.1 自动转换(也叫隐式类型转换,系统悄悄自动做的你看不到)"></a>1.1 自动转换(也叫隐式类型转换,系统悄悄自动做的你看不到)</h2><p> 一个<code>int</code> 类型变量和一个<code>byte</code>类型变量进行加法运算， 结果会是什么数据类型？ </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>; </span><br><span class="line"><span class="keyword">byte</span> b = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>运算结果，变量的类型将是<code>int</code> 类型，这就是出现了数据类型的自动类型转换现象。</p>
+<ul>
+<li><strong>自动转换</strong>：将<code>取值范围小的类型</code>自动提升为<code>取值范围大的类型</code> 。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">byte</span> b = <span class="number">2</span>;</span><br><span class="line">  	<span class="comment">// byte x = b + i; // 报错</span></span><br><span class="line">    <span class="comment">//int类型和byte类型运算，结果是int类型</span></span><br><span class="line">    <span class="keyword">int</span> j = b + i;</span><br><span class="line">    System.out.println(j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="转换原理图解"><a href="#转换原理图解" class="headerlink" title="转换原理图解"></a>转换原理图解</h3><p><code>byte</code> 类型内存占有1个字节，在和<code>int</code> 类型运算时会提升为<code>int</code>类型 ，自动补充3个字节，因此计算后的结果还是<code>int</code> 类型。</p>
+<p><img src="/2019/12/day02 【数据类型转换、运算符、方法入门】/类型自动提升.jpg" alt></p>
+<p>同样道理，当一个<code>int</code> 类型变量和一个<code>double</code> 变量运算时，<code>int</code> 类型将会自动提升为<code>double</code> 类型进行运算。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">double</span> d = <span class="number">2.5</span>;</span><br><span class="line">    <span class="comment">//int类型和double类型运算，结果是double类型</span></span><br><span class="line">    <span class="comment">//int类型会提升为double类型</span></span><br><span class="line">    <span class="keyword">double</span> e = d+i;</span><br><span class="line">    System.out.println(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="转换规则"><a href="#转换规则" class="headerlink" title="转换规则"></a>转换规则</h3><p>范围小的类型向范围大的类型提升，<code>byte、short、char</code> 运算时直接提升为<code>int</code> 。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>、<span class="keyword">short</span>、<span class="keyword">char</span>--&gt;<span class="keyword">int</span>--&gt;<span class="keyword">long</span>--&gt;<span class="keyword">float</span>--&gt;<span class="keyword">double</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-2-强制转换"><a href="#1-2-强制转换" class="headerlink" title="1.2 强制转换"></a>1.2 强制转换</h2><p>将<code>1.5</code> 赋值到<code>int</code> 类型变量会发生什么？产生编译失败，肯定无法赋值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1.5</span>; <span class="comment">// 错误</span></span><br></pre></td></tr></table></figure>
+<p><code>double</code> 类型内存8个字节，<code>int</code> 类型内存4个字节。<code>1.5</code> 是<code>double</code> 类型，取值范围大于<code>int</code> 。可以理解为<code>double</code> 是8升的水壶，<code>int</code> 是4升的水壶，不能把大水壶中的水直接放进小水壶去。</p>
+<p>想要赋值成功，只有通过强制类型转换，将<code>double</code> 类型强制转换成<code>int</code> 类型才能赋值。</p>
+<ul>
+<li><p><strong>强制类型转换</strong>：将<code>取值范围大的类型</code>强制转换成<code>取值范围小的类型</code>。</p>
+<p>比较而言，自动转换是Java自动执行的，而强制转换需要我们自己手动执行。</p>
+</li>
+</ul>
+<p><strong>转换格式：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名 = （数据类型）被转数据值；</span><br></pre></td></tr></table></figure>
+<p>将<code>1.5</code> 赋值到<code>int</code> 类型，代码修改为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// double类型数据强制转成int类型，直接去掉小数点。</span></span><br><span class="line"><span class="keyword">int</span> i = (<span class="keyword">int</span>)<span class="number">1.5</span>;</span><br></pre></td></tr></table></figure>
+<p>同样道理，当一个<code>short</code>类型与<code>1</code>相加，我们知道会类型提升，但是还想给结果赋值给short类型变量，就需要强制转换。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">     <span class="comment">//short类型变量，内存中2个字节</span></span><br><span class="line">     <span class="keyword">short</span> s = <span class="number">1</span>;</span><br><span class="line">     <span class="comment">/*</span></span><br><span class="line"><span class="comment">       出现编译失败</span></span><br><span class="line"><span class="comment">       s和1做运算的时候，1是int类型，s会被提升为int类型</span></span><br><span class="line"><span class="comment">       s+1后的结果是int类型，将结果在赋值会short类型时发生错误</span></span><br><span class="line"><span class="comment">       short内存2个字节，int类型4个字节</span></span><br><span class="line"><span class="comment">       必须将int强制转成short才能完成赋值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">     s = s + <span class="number">1</span>；<span class="comment">//编译失败</span></span><br><span class="line">     s = (<span class="keyword">short</span>)(s+<span class="number">1</span>);<span class="comment">//编译成功</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="转换原理图解-1"><a href="#转换原理图解-1" class="headerlink" title="转换原理图解"></a>转换原理图解</h3><p><img src="/2019/12/day02 【数据类型转换、运算符、方法入门】/类型强制转换.jpg" alt></p>
+<h3 id="强烈注意"><a href="#强烈注意" class="headerlink" title="强烈注意"></a>强烈注意</h3><ul>
+<li>浮点转成整数，直接取消小数点，可能造成数据损失精度。</li>
+<li><code>int</code> 强制转成<code>short</code> 砍掉2个字节，可能造成数据丢失。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义s为short范围内最大值</span></span><br><span class="line"><span class="keyword">short</span> s = <span class="number">32767</span>;</span><br><span class="line"><span class="comment">// 运算后，强制转换，砍掉2个字节后会出现不确定的结果</span></span><br><span class="line">s = (<span class="keyword">short</span>)(s + <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-ASCII编码表"><a href="#1-3-ASCII编码表" class="headerlink" title="1.3 ASCII编码表"></a>1.3 ASCII编码表</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">//字符类型变量</span></span><br><span class="line">  <span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">//字符类型和int类型计算</span></span><br><span class="line">  System.out.println(c+i);<span class="comment">//输出结果是98</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在计算机的内部都是二进制的0、1数据，如何让计算机可以直接识别人类文字的问题呢？就产生出了编码表的概念。</p>
+<ul>
+<li><p><strong>编码表</strong> ：就是将人类的文字和一个十进制数进行对应起来组成一张表格。</p>
+<p>人们就规定：</p>
+<p>|  字符  |  数值  |<br>| :—: | :—: |<br>|  0   |  48  |<br>|  9   |  57  |<br>|  A   |  65  |<br>|  Z   |  90  |<br>|  a   |  97  |<br>|  z   | 122  |</p>
+<ul>
+<li>将所有的英文字母，数字，符号都和十进制进行了对应，因此产生了世界上第一张编码表ASCII（                                         </li>
+</ul>
+<p>American Standard Code for Information Interchange 美国标准信息交换码）。</p>
+</li>
+</ul>
+<blockquote>
+<p>小贴士：</p>
+<p>在char类型和int类型计算的过程中，char类型的字符先查询编码表，得到97，再和1求和，结果为98。char类型提升为了int类型。char类型内存2个字节，int类型内存4个字节。</p>
+</blockquote>
+<h1 id="第二章-运算符"><a href="#第二章-运算符" class="headerlink" title="第二章 运算符"></a>第二章 运算符</h1><h2 id="2-1-算数运算符"><a href="#2-1-算数运算符" class="headerlink" title="2.1 算数运算符"></a>2.1 算数运算符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>算数运算符包括：</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>加法运算，字符串连接运算</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>减法运算</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>乘法运算</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>除法运算</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>取模运算，两个数字相除取余数</td>
+</tr>
+<tr>
+<td><code>++</code> 、  <code>--</code></td>
+<td>自增自减运算</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Java中，整数使用以上运算符，无论怎么计算，也不会得到小数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  	<span class="keyword">int</span> i = <span class="number">1234</span>;</span><br><span class="line">  	System.out.println(i/<span class="number">1000</span>*<span class="number">1000</span>);<span class="comment">//计算结果是1000</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>++</code>  <strong>运算，变量自己增长1</strong>。反之，<code>--</code> 运算，变量自己减少1，用法与<code>++</code> 一致。</p>
+<ul>
+<li><p>独立运算：</p>
+<ul>
+<li>变量在独立运算时，<code>前++</code>和<code>后++</code>没有区别 。</li>
+<li>变量<code>前++</code>   ：例如 <code>++i</code> 。</li>
+<li>变量<code>后++</code>   ：例如 <code>i++</code> 。</li>
+</ul>
+</li>
+<li><p>混合运算：</p>
+<ul>
+<li>和其他变量放在一起，<code>前++</code>和<code>后++</code>就产生了不同。</li>
+</ul>
+<ul>
+<li>变量<code>前++</code> ：变量a自己加1，将加1后的结果赋值给b，也就是说a先计算。a和b的结果都是2。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b = ++a;</span><br><span class="line">    System.out.println(a);<span class="comment">//计算结果是2</span></span><br><span class="line">    System.out.println(b);<span class="comment">//计算结果是2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>变量<code>后++</code> ：变量a先把自己的值1，赋值给变量b，此时变量b的值就是1，变量a自己再加1。a的结果是2，b的结果是1。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b = a++;</span><br><span class="line">    System.out.println(a);<span class="comment">//计算结果是2</span></span><br><span class="line">    System.out.println(b);<span class="comment">//计算结果是1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>+</code> 符号在字符串中的操作：</p>
+<ul>
+<li><code>+</code> 符号在遇到字符串的时候，表示<strong>连接、拼接</strong>的含义。</li>
+<li>“a”+”b”的结果是“ab”，连接含义</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line"> 	System.out.println(<span class="string">"5+5="</span>+<span class="number">5</span>+<span class="number">5</span>);<span class="comment">//输出5+5=55</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-赋值运算符"><a href="#2-2-赋值运算符" class="headerlink" title="2.2 赋值运算符"></a>2.2 赋值运算符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>赋值运算符包括：</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td>理解为等于号,下面都是理解</td>
+</tr>
+<tr>
+<td><code>+=</code></td>
+<td>加等于</td>
+</tr>
+<tr>
+<td><code>-=</code></td>
+<td>减等于</td>
+</tr>
+<tr>
+<td><code>*=</code></td>
+<td>乘等于</td>
+</tr>
+<tr>
+<td><code>/=</code></td>
+<td>除等于</td>
+</tr>
+<tr>
+<td><code>%=</code></td>
+<td>取模等</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>赋值运算符，就是将符号右边的值，赋给左边的变量。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">5</span>;</span><br><span class="line">    i+=<span class="number">5</span>;<span class="comment">//计算方式 i=i+5 变量i先加5，再赋值变量i</span></span><br><span class="line">    System.out.println(i); <span class="comment">//输出结果是10 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-比较运算符"><a href="#2-3-比较运算符" class="headerlink" title="2.3 比较运算符"></a>2.3 比较运算符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>比较运算符包括：</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>等于,比较符号两边数据是否相等，相等结果是true。</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>小于,比较符号左边的数据是否小于右边的数据，如果小于结果是true。</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>大于,比较符号左边的数据是否大于右边的数据，如果大于结果是true。</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>小于或者等于,比较符号左边的数据是否小于或者等于右边的数据，如果大于结果是false。</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>大于或者等于,比较符号左边的数据是否大于或者等于右边的数据，如果小于结果是false。</td>
+</tr>
+<tr>
+<td><code>！=</code></td>
+<td>不等于，如果符号两边的数据不相等，结果是true。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>比较运算符，是两个数据之间进行比较的运算，运算结果都是布尔值<code>true</code>或者<code>false</code> 。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="number">1</span>==<span class="number">1</span>);<span class="comment">//true</span></span><br><span class="line">    System.out.println(<span class="number">1</span>&lt;<span class="number">2</span>);<span class="comment">//true</span></span><br><span class="line">    System.out.println(<span class="number">3</span>&gt;<span class="number">4</span>);<span class="comment">//false</span></span><br><span class="line">    System.out.println(<span class="number">3</span>&lt;=<span class="number">4</span>);<span class="comment">//true</span></span><br><span class="line">    System.out.println(<span class="number">3</span>&gt;=<span class="number">4</span>);<span class="comment">//false</span></span><br><span class="line">    System.out.println(<span class="number">3</span>!=<span class="number">4</span>);<span class="comment">//true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-4-逻辑运算符"><a href="#2-4-逻辑运算符" class="headerlink" title="2.4 逻辑运算符"></a>2.4 逻辑运算符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>逻辑运算符包括：</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code>  短路与</td>
+<td>1. 两边都是true，结果是true  <br>2. 一边是false，结果是false  <br>短路特点：符号左边是false，右边不再运算</td>
+</tr>
+<tr>
+<td>`</td>
+<td></td>
+<td>`  短路或</td>
+<td>1. 两边都是false，结果是false  <br>2. 一边是true，结果是true  <br>短路特点： 符号左边是true，右边不再运算</td>
+</tr>
+<tr>
+<td><code>！</code>   取反</td>
+<td>1. ! true 结果是false<br>2. ! false结果是true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>逻辑运算符，是用来连接两个布尔类型结果的运算符，运算结果都是布尔值<code>true</code>或者<code>false</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span>&#123;</span><br><span class="line">    System.out.println(<span class="keyword">true</span> &amp;&amp; <span class="keyword">true</span>);<span class="comment">//true</span></span><br><span class="line">    System.out.println(<span class="keyword">true</span> &amp;&amp; <span class="keyword">false</span>);<span class="comment">//false</span></span><br><span class="line">    System.out.println(<span class="keyword">false</span> &amp;&amp; <span class="keyword">true</span>);<span class="comment">//false，右边不计算</span></span><br><span class="line">  </span><br><span class="line">    System.out.println(<span class="keyword">false</span> || <span class="keyword">false</span>);<span class="comment">//falase</span></span><br><span class="line">    System.out.println(<span class="keyword">false</span> || <span class="keyword">true</span>);<span class="comment">//true</span></span><br><span class="line">    System.out.println(<span class="keyword">true</span> || <span class="keyword">false</span>);<span class="comment">//true，右边不计算</span></span><br><span class="line">  </span><br><span class="line">    System.out.println(!<span class="keyword">false</span>);<span class="comment">//true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-5-三元运算符"><a href="#2-5-三元运算符" class="headerlink" title="2.5 三元运算符"></a>2.5 三元运算符</h2><ul>
+<li>三元运算符格式：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名 = 布尔类型表达式？结果<span class="number">1</span>：结果<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>三元运算符计算方式：<ul>
+<li>布尔类型表达式结果是true，三元运算符整体结果为结果1，赋值给变量。</li>
+<li>布尔类型表达式结果是false，三元运算符整体结果为结果2，赋值给变量。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = (<span class="number">1</span>==<span class="number">2</span> ? <span class="number">100</span> : <span class="number">200</span>);</span><br><span class="line">    System.out.println(i);<span class="comment">//200</span></span><br><span class="line">    <span class="keyword">int</span> j = (<span class="number">3</span>&lt;=<span class="number">4</span> ? <span class="number">500</span> : <span class="number">600</span>);</span><br><span class="line">    System.out.println(j);<span class="comment">//500</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="第三章-方法入门"><a href="#第三章-方法入门" class="headerlink" title="第三章 方法入门"></a>第三章 方法入门</h1><h2 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h2><p>我们在学习运算符的时候，都为每个运算符单独的创建一个新的类和main方法，我们会发现这样编写代码非常的繁琐，而且重复的代码过多。能否避免这些重复的代码呢，就需要使用方法来实现。</p>
+<ul>
+<li><strong>方法：</strong>就是将一个<strong>功能</strong>抽取出来，把代码单独定义在一个大括号内，形成一个单独的功能。</li>
+</ul>
+<p>当我们需要这个功能的时候，就可以去调用。这样即实现了代码的复用性，也解决了代码冗余的现象。</p>
+<h2 id="3-2-方法的定义"><a href="#3-2-方法的定义" class="headerlink" title="3.2 方法的定义"></a>3.2 方法的定义</h2><ul>
+<li>定义格式： </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名 （参数列表）｛</span><br><span class="line">    	代码...	</span><br><span class="line">   		<span class="keyword">return</span> ;</span><br><span class="line">｝</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义格式解释：<ul>
+<li>修饰符： 目前固定写法 <code>public static</code> 。</li>
+<li>返回值类型： 目前固定写法 <code>void</code> ，其他返回值类型在后面的课程讲解。</li>
+<li>方法名：为我们定义的方法起名，满足标识符的规范，用来调用方法。</li>
+<li>参数列表： 目前无参数， 带有参数的方法在后面的课程讲解。</li>
+<li>return：方法结束。因为返回值类型是void，方法大括号内的return可以不写。</li>
+</ul>
+</li>
+<li>举例： </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">methodName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  	System.out.println(<span class="string">"这是一个方法"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-方法的调用"><a href="#3-3-方法的调用" class="headerlink" title="3.3 方法的调用"></a>3.3 方法的调用</h2><p>方法在定义完毕后，方法不会自己运行，必须被调用才能执行，我们可以在主方法main中来调用我们自己定义好的方法。在主方法中，直接写要调用的方法名字就可以调用了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//调用定义的方法method</span></span><br><span class="line">    method();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义方法，被main方法调用</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  	System.out.println(<span class="string">"自己定义的方法，需要被main调用运行"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-4-调用练习"><a href="#3-4-调用练习" class="headerlink" title="3.4 调用练习"></a>3.4 调用练习</h2><p>将三元运算符代码抽取到自定义的方法中，并调用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//调用定义的方法operator</span></span><br><span class="line">    operator();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义方法，方法中定义三元运算符</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">operator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    i = (<span class="number">1</span>==<span class="number">2</span> ? <span class="number">100</span>:<span class="number">200</span>);</span><br><span class="line">    System.out.println(i);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span> ;</span><br><span class="line">    j = (<span class="number">3</span>&lt;=<span class="number">4</span> ? <span class="number">500</span>:<span class="number">600</span>);</span><br><span class="line">    System.out.println(j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-5-注意事项"><a href="#3-5-注意事项" class="headerlink" title="3.5 注意事项"></a>3.5 注意事项</h2><ul>
+<li><p>方法定义注意事项：</p>
+<ul>
+<li>方法必须定义在一类中方法外</li>
+<li>方法不能定义在另一个方法的里面</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//正确写法，类中，main方法外面可以定义方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//错误写法，一个方法不能定义在另一方法内部</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="第四章-JShell脚本工具"><a href="#第四章-JShell脚本工具" class="headerlink" title="第四章 JShell脚本工具"></a>第四章 JShell脚本工具</h1><h3 id="JShell脚本工具是JDK9的新特性"><a href="#JShell脚本工具是JDK9的新特性" class="headerlink" title="JShell脚本工具是JDK9的新特性"></a>JShell脚本工具是JDK9的新特性</h3><p>什么时候会用到<code>JShell</code>工具呢，当我们编写的代码非常少的时候，而又不愿意编写类，main方法，也不愿意去编译和运行，这个时候可以使用JShell工具。</p>
+<p>启动JShell工具，在DOS命令行直接输入JShell命令。</p>
+<p><img src="/2019/12/day02 【数据类型转换、运算符、方法入门】/jshell开启.jpg" alt></p>
+<p>接下来可以编写Java代码，无需写类和方法，直接写方法中的代码即可，同时无需编译和运行，直接回车即可</p>
+<p><img src="/2019/12/day02 【数据类型转换、运算符、方法入门】/jshell使用.jpg" alt></p>
+<blockquote>
+<p>小贴士:</p>
+<p>JShell工具，只适合片段代码的测试，开发更多内容，建议编写在方法中。</p>
+</blockquote>
+<h1 id="第五章-扩展知识点"><a href="#第五章-扩展知识点" class="headerlink" title="第五章 扩展知识点"></a>第五章 扩展知识点</h1><h2 id="5-1-符号的扩展"><a href="#5-1-符号的扩展" class="headerlink" title="5.1 +=符号的扩展"></a>5.1 +=符号的扩展</h2><p>下面的程序有问题吗？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">  <span class="keyword">short</span> s = <span class="number">1</span>;</span><br><span class="line">  s+=<span class="number">1</span>;</span><br><span class="line">  System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析： <code>s += 1</code> 逻辑上看作是<code>s = s + 1</code> 计算结果被提升为int类型，再向short类型赋值时发生错误，因为不能将取值范围大的类型赋值到取值范围小的类型。但是，<code>s=s+1进行两次运算</code>，<code>+=</code> 是一个运算符，只运算一次，并带有强制转换的特点，也就是说<code>s += 1</code> 就是<code>s = (short)(s + 1)</code>，因此程序没有问题编译通过，运行结果是2.</p>
+<h2 id="5-2-常量和变量的运算"><a href="#5-2-常量和变量的运算" class="headerlink" title="5.2 常量和变量的运算"></a>5.2 常量和变量的运算</h2><p>下面的程序有问题吗？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">  <span class="keyword">byte</span> b1=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">byte</span> b2=<span class="number">2</span>;</span><br><span class="line">  <span class="keyword">byte</span> b3=<span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">byte</span> b4=b1 + b2;</span><br><span class="line">  System.out.println(b3);</span><br><span class="line">  System.out.println(b4);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析：<code>b3 = 1 + 2</code> ，<code>1</code>和 <code>2</code> 是常量，为固定不变的数据，在编译的时候（编译器javac），已经确定了<code>1+2</code> 的结果并没有超过byte类型的取值范围，可以赋值给变量<code>b3</code> ，因此<code>b3=1 + 2</code>是正确的。</p>
+<p>反之，<code>b4 = b2 + b3</code>，<code>b2</code> 和 <code>b3</code> 是变量，变量的值是可能变化的，在编译的时候，编译器javac不确定b2+b3的结果是什么，因此会将结果以int类型进行处理，所以int类型不能赋值给byte类型，因此编译失败。</p>
+<p>在jshell中体现：</p>
+<p><img src="/2019/12/day02 【数据类型转换、运算符、方法入门】/扩展.jpg" alt></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Dubliner</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/12/day02 【数据类型转换、运算符、方法入门】/">http://yoursite.com/2019/12/day02 【数据类型转换、运算符、方法入门】/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2019/12/day01【前言、入门程序、常量、变量】/"><i class="fa fa-chevron-left">  </i><span>day01【前言、入门程序、常量、变量】</span></a></div><div class="next-post pull-right"><a href="/2019/12/day03【 流程控制语句】/"><span>day03【 流程控制语句】</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2019 By Dubliner</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>

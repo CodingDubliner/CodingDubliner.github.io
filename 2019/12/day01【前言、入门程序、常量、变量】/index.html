@@ -1,0 +1,434 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="day01【前言、入门程序、常量、变量】"><meta name="keywords" content="Java"><meta name="author" content="Dubliner"><meta name="copyright" content="Dubliner"><title>day01【前言、入门程序、常量、变量】 | Dubliner</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script><!-- hexo-inject:begin --><!-- hexo-inject:end -->var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今日内容"><span class="toc-number">1.</span> <span class="toc-text">今日内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#教学目标"><span class="toc-number">2.</span> <span class="toc-text">教学目标</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章-开发前言"><span class="toc-number"></span> <span class="toc-text">第一章  开发前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Java语言概述"><span class="toc-number">1.</span> <span class="toc-text">1.1 Java语言概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是Java语言"><span class="toc-number">1.1.</span> <span class="toc-text">什么是Java语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java语言发展历史"><span class="toc-number">1.2.</span> <span class="toc-text">Java语言发展历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java语言能做什么"><span class="toc-number">1.3.</span> <span class="toc-text">Java语言能做什么</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-计算机基础知识"><span class="toc-number">2.</span> <span class="toc-text">1.2 计算机基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#计算机底层都是0和1"><span class="toc-number">2.1.</span> <span class="toc-text">计算机底层都是0和1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二进制"><span class="toc-number">2.2.</span> <span class="toc-text">二进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字节"><span class="toc-number">2.3.</span> <span class="toc-text">字节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用DOS命令"><span class="toc-number">2.4.</span> <span class="toc-text">常用DOS命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二章-Java语言开发环境搭建"><span class="toc-number"></span> <span class="toc-text">第二章  Java语言开发环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Java虚拟机——JVM"><span class="toc-number">1.</span> <span class="toc-text">2.1 Java虚拟机——JVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-JRE-和-JDK"><span class="toc-number">2.</span> <span class="toc-text">2.2 JRE 和 JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-JDK9安装图解"><span class="toc-number">3.</span> <span class="toc-text">2.3 JDK9安装图解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-JAVA-HOME环境变量的配置-回去根据下图做一遍就好"><span class="toc-number">4.</span> <span class="toc-text">2.4 JAVA_HOME环境变量的配置//回去根据下图做一遍就好</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置环境变量作用"><span class="toc-number">4.1.</span> <span class="toc-text">配置环境变量作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置环境变量步骤"><span class="toc-number">4.2.</span> <span class="toc-text">配置环境变量步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows-7-8版本"><span class="toc-number">4.2.1.</span> <span class="toc-text">Windows 7,8版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows-10-版本"><span class="toc-number">4.2.2.</span> <span class="toc-text">Windows 10 版本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-写java代码-都用英文标点-中文标点会有问题-都切换为英文"><span class="toc-number">5.</span> <span class="toc-text">2.5 写java代码,都用英文标点,中文标点会有问题,都切换为英文</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三章-HelloWorld入门程序"><span class="toc-number"></span> <span class="toc-text">第三章 HelloWorld入门程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-程序开发步骤说明"><span class="toc-number">1.</span> <span class="toc-text">3.1 程序开发步骤说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-编写Java源程序"><span class="toc-number">2.</span> <span class="toc-text">3.2 编写Java源程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-编译Java源文件"><span class="toc-number">3.</span> <span class="toc-text">3.3 编译Java源文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-运行Java程序"><span class="toc-number">4.</span> <span class="toc-text">3.4 运行Java程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-入门程序说明"><span class="toc-number">5.</span> <span class="toc-text">3.5 入门程序说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编译和运行是两回事"><span class="toc-number">5.1.</span> <span class="toc-text">编译和运行是两回事</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于main方法"><span class="toc-number">5.2.</span> <span class="toc-text">关于main方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-注释"><span class="toc-number">6.</span> <span class="toc-text">3.6 注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-关键字"><span class="toc-number">7.</span> <span class="toc-text">3.7 关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-标识符-就是用来起名字的-比如我们的名字就是我们的标识-标记标志"><span class="toc-number">8.</span> <span class="toc-text">3.8 标识符,就是用来起名字的,比如我们的名字就是我们的标识(标记标志)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第四章-常量"><span class="toc-number"></span> <span class="toc-text">第四章 常量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-概述"><span class="toc-number">1.</span> <span class="toc-text">4.1 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-分类"><span class="toc-number">2.</span> <span class="toc-text">4.2 分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-练习"><span class="toc-number">3.</span> <span class="toc-text">4.3 练习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第五章-变量和数据类型"><span class="toc-number"></span> <span class="toc-text">第五章 变量和数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-变量概述"><span class="toc-number">1.</span> <span class="toc-text">5.1 变量概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-数据类型-其实就是数据的类型-每种数据都有它的类型-如23是整数类型-整数类型是中国人的说法-外国人叫int-其他类型同理"><span class="toc-number">2.</span> <span class="toc-text">5.2 数据类型,其实就是数据的类型,每种数据都有它的类型,如23是整数类型,整数类型是中国人的说法,外国人叫int,其他类型同理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型分类"><span class="toc-number">2.1.</span> <span class="toc-text">数据类型分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本数据类型"><span class="toc-number">2.2.</span> <span class="toc-text">基本数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-变量的定义"><span class="toc-number">3.</span> <span class="toc-text">5.3 变量的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#格式"><span class="toc-number">3.1.</span> <span class="toc-text">格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#练习"><span class="toc-number">3.2.</span> <span class="toc-text">练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-注意事项"><span class="toc-number">4.</span> <span class="toc-text">5.4 注意事项</span></a></li></ol></li></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/head.jpg"></div><div class="author-info__name text-center">Dubliner</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">10</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">2</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">4</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Dubliner</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span></div><div id="post-info"><div id="post-title">day01【前言、入门程序、常量、变量】</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-12-21</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Java/">Java</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Java/基础/">基础</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h2><ul>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><li>Java语言的发展历史</li>
+<li>Java开发环境搭建</li>
+<li>编写HelloWorld程序</li>
+<li>常量和变量</li>
+</ul>
+<h2 id="教学目标"><a href="#教学目标" class="headerlink" title="教学目标"></a>教学目标</h2><ul>
+<li>[ ] 能够计算二进制和十进制数之间的互转</li>
+<li>[ ] 能够使用常见的DOS命令</li>
+<li>[ ] 理解Java语言的跨平台实现原理</li>
+<li>[ ] 理解JDK/JRE/JVM的组成和作用</li>
+<li>[ ] 能够配置环境变量JAVA_HOME</li>
+<li>[ ] 能够编写HelloWorld程序编译并执行</li>
+<li>[ ] 能够辨识关键字</li>
+<li>[ ] 理解标识符的含义</li>
+<li>[ ] 能够定义出所有类型的常量</li>
+<li>[ ] 理解Java中的基本数据类型分类</li>
+<li>[ ] 能够定义8种基本数据集类型的变量</li>
+</ul>
+<h1 id="第一章-开发前言"><a href="#第一章-开发前言" class="headerlink" title="第一章  开发前言"></a>第一章  开发前言</h1><h2 id="1-1-Java语言概述"><a href="#1-1-Java语言概述" class="headerlink" title="1.1 Java语言概述"></a>1.1 Java语言概述</h2><h3 id="什么是Java语言"><a href="#什么是Java语言" class="headerlink" title="什么是Java语言"></a>什么是Java语言</h3><p>Java语言是美国Sun公司（Stanford University Network），在1995年推出的高级编程语言。所谓编程语言，是<strong>计算机语言(人与计算机打交道交流的方式</strong>)，人们可以使用编程语言对计算机下达命令，让计算机完成人们需要的功能。</p>
+<h3 id="Java语言发展历史"><a href="#Java语言发展历史" class="headerlink" title="Java语言发展历史"></a>Java语言发展历史</h3><ul>
+<li>1995年Sun公司发布Java1.0版本</li>
+<li>1997年发布Java 1.1版本</li>
+<li>1998年发布Java 1.2版本</li>
+<li>2000年发布Java 1.3版本</li>
+<li>2002年发布Java 1.4版本</li>
+<li>2004年发布Java 5.0版本</li>
+<li>2006年发布Java 6.0版本</li>
+<li>2009年Oracle甲骨文公司收购Sun公司，并于2011发布Java 7.0版本</li>
+<li>2014年发布Java 8.0版本</li>
+<li>2017年发布Java 9.0版本</li>
+<li>2018年3月发布Java 10.0版本</li>
+</ul>
+<h3 id="Java语言能做什么"><a href="#Java语言能做什么" class="headerlink" title="Java语言能做什么"></a>Java语言能做什么</h3><p><strong>Java语言主要应用在互联网程序的开发领域</strong>。常见的互联网程序比如天猫、京东、物流系统、网银系统等，在服务器后台处理<strong>大数据</strong>的存储、查询、<strong>数据挖掘等</strong>方面，Java也有很多应用。</p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/京东.jpg" alt></p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/天猫.jpg" alt="天猫"></p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/运单查询.jpg" alt="运单查询"></p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/网银.jpg" alt="网银"></p>
+<h2 id="1-2-计算机基础知识"><a href="#1-2-计算机基础知识" class="headerlink" title="1.2 计算机基础知识"></a>1.2 计算机基础知识</h2><h3 id="计算机底层都是0和1"><a href="#计算机底层都是0和1" class="headerlink" title="计算机底层都是0和1"></a>计算机底层都是0和1</h3><p><img src="/2019/12/day01【前言、入门程序、常量、变量】/1机器语言.jpg" alt></p>
+<h3 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h3><p>计算机中的数据不同于人们生活中的数据，人们生活采用十进制数，而计算机中全部采用二进制数表示，它只包含0、1两个数，逢二进一，1+1=10。每一个0或者每一个1，表示一位,叫做一个bit（比特）。</p>
+<p>下面了解一下<strong>十进制和二进制数据之间的转换计算,最好记忆一下</strong>。</p>
+<ul>
+<li><strong>十进制数据转成二进制数据：</strong>使用除以2获取余数的方式,简单记,<strong>除2倒取余数</strong></li>
+</ul>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/十进制转二进制.jpg" alt="十进制转二进制"></p>
+<ul>
+<li><strong>二进制数据转成十进制数据：</strong>使用8421编码的方式</li>
+</ul>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/二进制转十进制.jpg" alt="二进制转十进制"></p>
+<ul>
+<li><strong>互相转换,练习如下：</strong></li>
+</ul>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/666.png" alt></p>
+<h3 id="字节"><a href="#字节" class="headerlink" title="字节"></a>字节</h3><p>字节是我们常见的计算机中最小存储单元。计算机存储任何的数据，都是以字节的形式存储，右键点击文件属性，我们可以查看文件的字节大小。</p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/888.png" alt></p>
+<p>8个bit（二进制位） 即八个0或者1的组合,表示为1个字节，写成<strong>1 Byte</strong>或者<strong>1 B</strong>。</p>
+<ul>
+<li>8 bit = 1 B</li>
+<li>1024 B = 1 KB</li>
+<li>1024 KB = 1 MB</li>
+<li>1024 MB = 1 GB</li>
+<li>1024 GB = 1 TB</li>
+</ul>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/999.png" alt></p>
+<h3 id="常用DOS命令"><a href="#常用DOS命令" class="headerlink" title="常用DOS命令"></a>常用DOS命令</h3><p>Java语言的初学者，学习一些DOS命令，会非常有帮助。DOS是一个早期的操作系统，现在已经被Windows系统取代，对于我们开发人员，目前需要在DOS中完成一些事情，因此就需要掌握一些必要的命令。</p>
+<ul>
+<li><p><strong>进入DOS命令行操作窗口</strong></p>
+<ul>
+<li><p>按住<code>Windows田字键然后R</code>键，打开运行窗口，输入<code>cmd</code>回车，进入到DOS的操作窗口。</p>
+</li>
+<li><p>(<strong>或者按住shift键然后鼠标右键,弹框,选择在此处打开命令行,我推荐这个方式,更快</strong>!)</p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/运行窗口.jpg" alt="运行窗口"></p>
+</li>
+<li><p>打开DOS命令行后，看到一个路径 <code>C:\Users\...</code>  就表示我们现在操作的磁盘是C盘。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/dos命令行.jpg" alt="dos命令行"></p>
+<ul>
+<li><p><strong>常用命令,需要记忆,多加练习,慢慢就掌握了</strong></p>
+<p>| 命令             | 操作符号      |<br>| ———————— | ——————- |<br>| 盘符切换命令     | <code>盘符名:</code>     |<br>| 查看当前文件夹   | <code>dir</code>        |<br>| 进入文件夹命令   | <code>cd 文件夹名</code> |<br>| 退出文件夹命令   | <code>cd ..</code>       |<br>| 退出到磁盘根目录 | <code>cd \</code>        |<br>| 清屏             | <code>cls</code>         |<br>| 退出命令行窗口   | <code>exit</code>        |</p>
+</li>
+</ul>
+<h1 id="第二章-Java语言开发环境搭建"><a href="#第二章-Java语言开发环境搭建" class="headerlink" title="第二章  Java语言开发环境搭建"></a>第二章  Java语言开发环境搭建</h1><h2 id="2-1-Java虚拟机——JVM"><a href="#2-1-Java虚拟机——JVM" class="headerlink" title="2.1 Java虚拟机——JVM"></a>2.1 Java虚拟机——JVM</h2><ul>
+<li><strong>JVM</strong>（Java Virtual Machine ）：Java虚拟机，简称<strong>JVM，是运行所有Java程序的假想计算机</strong>，是Java程序的运行环境之一，也是Java 最具吸引力的特性之一。我们编写的<strong>Java代码，都运行在JVM 之上</strong>。</li>
+</ul>
+<ul>
+<li><strong>跨平台</strong>：任何软件的运行，都必须要运行在操作系统之上，而我们用Java编写的软件可以运行在任何的操作系统上，这个特性称为<strong>Java语言的跨平台特性</strong>。该特性是由JVM实现的，我们编写的程序运行在JVM上，而JVM运行在操作系统上。<img src="/2019/12/day01【前言、入门程序、常量、变量】/跨平台.jpg" alt="跨平台"></li>
+</ul>
+<p>如图所示，<strong>Java的虚拟机本身是不具备跨平台功能的，每个操作系统下都有不同版本的虚拟机。</strong></p>
+<h2 id="2-2-JRE-和-JDK"><a href="#2-2-JRE-和-JDK" class="headerlink" title="2.2 JRE 和 JDK"></a>2.2 JRE 和 JDK</h2><ul>
+<li><strong>JRE </strong> (Java Runtime Environment) ：是Java程序的运行时环境，包含<code>JVM</code> 和运行时所需要的<code>核心类库</code>。</li>
+<li><strong>JDK</strong>  (Java Development Kit)：是Java程序开发工具包，包含<code>JRE</code> 和开发人员使用的工具(如编译工具javac.exe和运行工具java.exe)。</li>
+</ul>
+<p>我们想要运行一个已有的Java程序，那么只需安装<code>JRE</code> 即可。</p>
+<p>我们想要开发一个全新的Java程序，那么必须安装<code>JDK</code> ，其内部包含<code>JRE</code>。</p>
+<blockquote>
+<p>小贴士：</p>
+<p>三者关系： JDK &gt; JRE &gt; JVM</p>
+</blockquote>
+<h2 id="2-3-JDK9安装图解"><a href="#2-3-JDK9安装图解" class="headerlink" title="2.3 JDK9安装图解"></a>2.3 JDK9安装图解</h2><p><img src="/2019/12/day01【前言、入门程序、常量、变量】/jdk1.jpg" alt="jdk1"></p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/jdk2.jpg" alt="jdk2"></p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/jdk3.jpg" alt="jdk3"></p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/jdk4.jpg" alt="jdk4"></p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/jdk5.jpg" alt="jdk5"></p>
+<blockquote>
+<p>小贴士：</p>
+<p>安装路径中，建议不要包含中文和空格。</p>
+</blockquote>
+<h2 id="2-4-JAVA-HOME环境变量的配置-回去根据下图做一遍就好"><a href="#2-4-JAVA-HOME环境变量的配置-回去根据下图做一遍就好" class="headerlink" title="2.4 JAVA_HOME环境变量的配置//回去根据下图做一遍就好"></a>2.4 JAVA_HOME环境变量的配置//回去根据下图做一遍就好</h2><h3 id="配置环境变量作用"><a href="#配置环境变量作用" class="headerlink" title="配置环境变量作用"></a><strong>配置环境变量作用</strong></h3><p>开发Java程序，需要使用JDK中提供的工具，工具在JDK9安装目录的<code>bin</code> 目录下。</p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/开发工具.jpg" alt="开发工具"></p>
+<p>在DOS命令行下使用这些工具，就要先进入到JDK的bin目录下，这个过程就会非常的麻烦。</p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量1.jpg" alt="环境变量1"></p>
+<p>不进入JDK的<code>bin</code>目录，这些工具就不能使用，会报错。</p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量2.jpg" alt="环境变量2"></p>
+<p>为了开发方便，我们想<strong>在任意的目录下都可以使用JDK的开发工具</strong>，则必须要配置环境变量，配置环境变量的意义在于告诉操作系统，我们使用的JDK开发工具在哪个目录下。</p>
+<h3 id="配置环境变量步骤"><a href="#配置环境变量步骤" class="headerlink" title="配置环境变量步骤"></a>配置环境变量步骤</h3><h4 id="Windows-7-8版本"><a href="#Windows-7-8版本" class="headerlink" title="Windows 7,8版本"></a>Windows 7,8版本</h4><ol>
+<li>计算机鼠标右键,选择<code>属性</code> </li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量3.jpg" alt="环境变量3"></p>
+<ol>
+<li>选择<code>高级系统设置</code> </li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量4.jpg" alt="环境变量4"></p>
+<ol>
+<li><code>高级</code> 选项卡，点击<code>环境变量</code> </li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量5.jpg" alt="环境变量5"></p>
+<ol>
+<li>点击<code>新建</code> ，创建新的环境变量</li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量6.jpg" alt="环境变量6"></p>
+<ol>
+<li>变量名输入<code>JAVA_HOME</code>，变量值输入JDK9的安装目录 <code>C:\Java9\jdk-9.0.1</code> </li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量7.jpg" alt="环境变量7"></p>
+<ol>
+<li>选中<code>Path</code> 环境变量，<code>双击</code>或者<code>点击编辑</code> </li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量8.jpg" alt="环境变量8"></p>
+<blockquote>
+<p>小贴士:</p>
+<p>Path中<code>C:\ProgramData\Oracle\Java...</code>，该路径是安装后默认配置的路径，可以删除。</p>
+</blockquote>
+<ol>
+<li>在变量值的最前面(打开按home键可以跑到最前面)，键入<code>%JAVA_HOME%\bin;</code>  分号必须要写，必须是英文格式。</li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量9.jpg" alt="环境变量9"></p>
+<ol>
+<li>环境变量配置完成，重新开启DOS命令行，在任意目录下输入<code>javac</code> 命令，运行成功。</li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量10.jpg" alt="环境变量10"></p>
+<h4 id="Windows-10-版本"><a href="#Windows-10-版本" class="headerlink" title="Windows 10 版本"></a>Windows 10 版本</h4><ol>
+<li>文件资源管理器 —&gt; 此电脑鼠标右键 —&gt; 选择<code>属性</code> </li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/win10-01.JPG" alt></p>
+<ol>
+<li>选择<code>高级系统设置</code>  —&gt; 选择  <code>环境变量</code></li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/win10-02.JPG" alt></p>
+<ol>
+<li>点击下方系统变量的 <code>新建</code> ，创建新的环境变量，变量名输入<code>JAVA_HOME</code>，变量值输入JDK9的安装目录 <code>D:\02_DevelopTools\Java\jdk-9.0.1</code> </li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/win10-03.JPG" alt></p>
+<ol>
+<li>选中<code>Path</code> 环境变量，<code>双击</code>或者<code>点击编辑</code></li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/win10-04.JPG" alt></p>
+<ol>
+<li>点击<code>新建</code>，键入<code>%JAVA_HOME%\bin</code> ，必须是英文格式。选中该行，上移到最上方，点击确定。</li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/win10-05.JPG" alt></p>
+<ol>
+<li>环境变量配置完成，重新开启DOS命令行，在任意目录下输入<code>javac</code> 命令。</li>
+</ol>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/环境变量10.jpg" alt="环境变量10"></p>
+<h2 id="2-5-写java代码-都用英文标点-中文标点会有问题-都切换为英文"><a href="#2-5-写java代码-都用英文标点-中文标点会有问题-都切换为英文" class="headerlink" title="2.5 写java代码,都用英文标点,中文标点会有问题,都切换为英文"></a>2.5 写java代码,都用英文标点,中文标点会有问题,都切换为英文</h2><p>安装好搜狗输入法,选择搜狗的红色s图标,鼠标右键选择-设置属性,弹框后,找到中文时使用英文标点,打√勾选,如下图</p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/中文时使用英文标点.png" alt></p>
+<h1 id="第三章-HelloWorld入门程序"><a href="#第三章-HelloWorld入门程序" class="headerlink" title="第三章 HelloWorld入门程序"></a>第三章 HelloWorld入门程序</h1><h2 id="3-1-程序开发步骤说明"><a href="#3-1-程序开发步骤说明" class="headerlink" title="3.1 程序开发步骤说明"></a>3.1 程序开发步骤说明</h2><p>开发环境已经搭建完毕，可以开发我们第一个Java程序了。</p>
+<p>Java程序开发三步骤：<strong>编写</strong>、<strong>编译</strong>、<strong>运行</strong>。</p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/开发步骤.jpg" alt="开发步骤"></p>
+<h2 id="3-2-编写Java源程序"><a href="#3-2-编写Java源程序" class="headerlink" title="3.2 编写Java源程序"></a>3.2 编写Java源程序</h2><ol>
+<li>在<code>D:\day01</code> 目录下新建文本文件，完整的文件名修改为<code>HelloWorld.java</code>，其中文件名为<code>HelloWorld</code>，后缀名必须为<code>.java</code> 。</li>
+<li><p>用记事本打开</p>
+</li>
+<li><p>在文件中键入文本并保存，代码如下：</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">  	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    	System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>文件名必须是<code>HelloWorld</code> ，保证文件名和类的名字是一致的，注意大小写。</p>
+<p>每个字母和符号必须与示例代码一模一样,其中args是个变量名,叫abc也可以,关于变量名,下面会学。</p>
+</blockquote>
+<p>第一个<code>HelloWord</code> 源程序就编写完成了，但是这个文件是程序员编写的，JVM是看不懂的，也就不能运行，因此我们必须将编写好的<code>Java源文件</code> 编译成JVM可以看懂的<code>字节码文件</code> ，也就是<code>.class</code>文件。</p>
+<h2 id="3-3-编译Java源文件"><a href="#3-3-编译Java源文件" class="headerlink" title="3.3 编译Java源文件"></a>3.3 编译Java源文件</h2><p>在DOS命令行中，<strong>进入Java源文件的目录</strong>，使用<code>javac</code> 命令进行编译。</p>
+<p>命令：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac Java源文件名.后缀名</span><br></pre></td></tr></table></figure>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac HelloWorld.java</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/编译.jpg" alt="编译"></p>
+<p>编译成功后，命令行没有任何提示。打开<code>D:\day01</code>目录，发现产生了一个新的文件 <code>HelloWorld.class</code>，该文件就是编译后的文件，是Java的可运行文件，称为<strong>字节码文件</strong>，有了字节码文件，就可以运行程序了。 </p>
+<blockquote>
+<p>Java源文件的编译工具<code>javac.exe</code>，在JDK安装目录的bin目录下。但是由于配置了环境变量，可以在任意目录下使用。</p>
+</blockquote>
+<h2 id="3-4-运行Java程序"><a href="#3-4-运行Java程序" class="headerlink" title="3.4 运行Java程序"></a>3.4 运行Java程序</h2><p>在DOS命令行中，<strong>进入Java源文件的目录</strong>，使用<code>java</code> 命令进行运行。</p>
+<p>命令：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java 类名字</span><br></pre></td></tr></table></figure>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java HelloWorld</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>java HelloWord  不要写 不要写 不要写 .class</p>
+</blockquote>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/运行.jpg" alt="运行"></p>
+<blockquote>
+<p>Java程序<code>.class文件</code> 的运行工具<code>java.exe</code> ，在JDK安装目录的bin目录下。但是由于配置了环境变量，可以再任意目录下使用。</p>
+</blockquote>
+<h2 id="3-5-入门程序说明"><a href="#3-5-入门程序说明" class="headerlink" title="3.5 入门程序说明"></a>3.5 入门程序说明</h2><h3 id="编译和运行是两回事"><a href="#编译和运行是两回事" class="headerlink" title="编译和运行是两回事"></a>编译和运行是两回事</h3><ul>
+<li><strong>编译</strong>：是指将我们编写的.Java源文件翻译成JVM认识的<code>.class</code>文件，在这个过程中，<code>javac</code> 编译器会检查我们所写的程序是否有错误，有错误就会提示出来，如果没有错误就会编译成功。</li>
+<li><strong>运行</strong>：是指将<code>.class</code>文件交给JVM去运行，此时JVM就会去执行我们编写的程序了。</li>
+</ul>
+<h3 id="关于main方法"><a href="#关于main方法" class="headerlink" title="关于main方法"></a>关于main方法</h3><ul>
+<li><strong>main方法</strong>：称为主方法。写法是<strong>固定格式</strong>不可以更改。<strong>main方法是程序的入口</strong>点或起始点，无论我们编写多少程序，<strong>JVMJava虚拟机在运行的时候，都会从main方法这里开始执行的。</strong></li>
+</ul>
+<h2 id="3-6-注释"><a href="#3-6-注释" class="headerlink" title="3.6 注释"></a>3.6 注释</h2><ul>
+<li><strong>注释</strong>：就是对代码的解释和说明。其目的是让人们能够更加轻松地了解代码。为代码添加注释，是十分必须要的，它不会编译和运行,无效代码给人看的</li>
+<li>Java中有单行注释和多行注释(<strong>需要记忆下面的格式</strong>)<ul>
+<li>单行注释以 <code>//</code>开头，以<code>一行</code>结束</li>
+<li>多行注释以 <code>/*</code>开头，以<code>*/</code>结束~~</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;<span class="comment">//这是一个类,用来模拟一类事物</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;<span class="comment">//这是一个事物里面的一个功能,方法,所有程序都是从这里开始执行的,入口</span></span><br><span class="line">		System.out.println(<span class="string">"HelloWorld"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 HelloWorld这是一个类,用来模拟一类事物</span></span><br><span class="line"><span class="comment">	 main,这是一个事物里面的一个功能,方法,所有程序都是从这里开始执行的,入口</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-7-关键字"><a href="#3-7-关键字" class="headerlink" title="3.7 关键字"></a>3.7 关键字</h2><ul>
+<li><p><strong>关键字:Java赋予特殊含义的单词,就不能用来起名字</strong>(如果可以起名字我就可以随便改变它原来的意思,比如把        </p>
+<p>​            class在java中只表示类的意思改为班级等等其他意思);<br>​        关键字很多,不用记,用多了就熟悉了,<strong>关键字有个特点:都是小写的</strong>,反过来小写不一定是关键字比如abc,          </p>
+<p>​            因为abc可以用来起名字,</p>
+<p>​        关键字不可以用来起名字!!!</p>
+<p><img src="/2019/12/day01【前言、入门程序、常量、变量】/Java关键字.png" alt></p>
+</li>
+</ul>
+<h2 id="3-8-标识符-就是用来起名字的-比如我们的名字就是我们的标识-标记标志"><a href="#3-8-标识符-就是用来起名字的-比如我们的名字就是我们的标识-标记标志" class="headerlink" title="3.8 标识符,就是用来起名字的,比如我们的名字就是我们的标识(标记标志)"></a>3.8 标识符,就是用来起名字的,比如我们的名字就是我们的标识(标记标志)</h2><ul>
+<li><strong>标识符</strong>：是指在程序中，我们自己定义内容。比如类的名字、方法的名字和变量的名字等等，都是标识符。<ul>
+<li>HelloWorld案例中，出现的标识符有类的名字<code>HelloWorld</code> 。</li>
+</ul>
+</li>
+<li><strong>命名规则：<code>硬性要求</code></strong><ul>
+<li>标识符可以包含<code>英文字母26个(区分大小写)</code>、<code>数字0到9</code> 、<code>$（美元符号）</code>和<code>_（下划线）(中文也可以用来起名字但是不推荐)</code>。</li>
+<li>标识符不能以数字开头。(需要记忆)</li>
+<li>标识符不能是关键字。</li>
+</ul>
+</li>
+<li><strong>命名规范：<code>软性建议</code></strong><ul>
+<li>类名规范：首字母大写，后面每个单词首字母大写（大驼峰式）。如MyHelloWord</li>
+<li>方法名规范：首字母小写，后面每个单词首字母大写（小驼峰式）。如myMethod</li>
+<li>变量名规范：首字母小写，后面每个单词首字母大写（小驼峰式）。如myVar</li>
+</ul>
+</li>
+</ul>
+<h1 id="第四章-常量"><a href="#第四章-常量" class="headerlink" title="第四章 常量"></a>第四章 常量</h1><h2 id="4-1-概述"><a href="#4-1-概述" class="headerlink" title="4.1 概述"></a>4.1 概述</h2><p><strong>常量：是指在Java程序中固定不变的数据</strong>。</p>
+<h2 id="4-2-分类"><a href="#4-2-分类" class="headerlink" title="4.2 分类"></a>4.2 分类</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">数据举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">整数常量</td>
+<td style="text-align:left">所有的整数</td>
+<td style="text-align:left">0，1，  567，  -9</td>
+</tr>
+<tr>
+<td style="text-align:left">小数常量</td>
+<td style="text-align:left">所有的小数</td>
+<td style="text-align:left">0.0，  -0.1，  2.55</td>
+</tr>
+<tr>
+<td style="text-align:left">字符常量</td>
+<td style="text-align:left">单引号引起来,只能写一个字符,必须有内容</td>
+<td style="text-align:left">‘a’ ， ‘好’  ‘6’</td>
+</tr>
+<tr>
+<td style="text-align:left">字符串常量</td>
+<td style="text-align:left">双引号引起来,可以写多个字符,也可以不写</td>
+<td style="text-align:left">“A” ，”Hello” ，”你好” ，””</td>
+</tr>
+<tr>
+<td style="text-align:left">布尔常量</td>
+<td style="text-align:left">只有两个值（流程控制中讲解）</td>
+<td style="text-align:left">true ，  false</td>
+</tr>
+<tr>
+<td style="text-align:left">空常量</td>
+<td style="text-align:left">只有一个值（引用数据类型中讲解）</td>
+<td style="text-align:left">null</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="4-3-练习"><a href="#4-3-练习" class="headerlink" title="4.3 练习"></a>4.3 练习</h2><p>需求：输出各种类型的常量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConstantDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 输出整数常量</span></span><br><span class="line">        System.out.println(<span class="number">123</span>);<span class="comment">//系统输出打印</span></span><br><span class="line">        <span class="comment">// 输出小数常量</span></span><br><span class="line">        System.out.println(<span class="number">0.125</span>);</span><br><span class="line">        <span class="comment">// 输出字符常量</span></span><br><span class="line">        System.out.println(<span class="string">'A'</span>);</span><br><span class="line">        <span class="comment">// 输出布尔常量</span></span><br><span class="line">        System.out.println(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">// 输出字符串常量</span></span><br><span class="line">        System.out.println(<span class="string">"你好Java"</span>);</span><br><span class="line">  	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="第五章-变量和数据类型"><a href="#第五章-变量和数据类型" class="headerlink" title="第五章 变量和数据类型"></a>第五章 变量和数据类型</h1><h2 id="5-1-变量概述"><a href="#5-1-变量概述" class="headerlink" title="5.1 变量概述"></a>5.1 变量概述</h2><ul>
+<li><strong>变量：常量是固定不变的数据，那么在程序中可以变化的量称为变量。</strong></li>
+</ul>
+<blockquote>
+<p>数学中，可以使用字母代替数字运算,例如 x=1+5 或者 6=x+5。</p>
+<p>程序中，可以使用字母保存数字的方式进行运算，提高计算能力，可以解决更多的问题。比如x保存5，x也可以保存6，这样x保存的数据是可以改变的，也就是我们所讲解的变量。</p>
+</blockquote>
+<p><strong>Java中要求一个变量每次只能保存一个数据，必须要明确保存的数据的类型</strong>,所以写一个东西表示变量,少不了要告诉我,变量保存的数据是什么类型。</p>
+<h2 id="5-2-数据类型-其实就是数据的类型-每种数据都有它的类型-如23是整数类型-整数类型是中国人的说法-外国人叫int-其他类型同理"><a href="#5-2-数据类型-其实就是数据的类型-每种数据都有它的类型-如23是整数类型-整数类型是中国人的说法-外国人叫int-其他类型同理" class="headerlink" title="5.2 数据类型,其实就是数据的类型,每种数据都有它的类型,如23是整数类型,整数类型是中国人的说法,外国人叫int,其他类型同理"></a>5.2 数据类型,其实就是数据的类型,每种数据都有它的类型,如23是整数类型,整数类型是中国人的说法,外国人叫int,其他类型同理</h2><h3 id="数据类型分类"><a href="#数据类型分类" class="headerlink" title="数据类型分类"></a>数据类型分类</h3><p>Java的数据类型分为两大类：</p>
+<ul>
+<li><strong>基本数据类型</strong>：包括 <code>整数</code>、<code>小数(浮点数)</code>、<code>字符</code>、<code>布尔</code>。 </li>
+<li><strong>引用数据类型</strong>：包括 <code>类</code>、<code>数组</code>、<code>接口</code>(后面学)。 </li>
+</ul>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>四类八种基本数据类型：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">内存占用</th>
+<th style="text-align:left">取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">字节型</td>
+<td style="text-align:left">byte</td>
+<td style="text-align:left">1个字节</td>
+<td style="text-align:left">-128 到 127,即-2的7次方到2的7次方减1,一个字节8位是7,其他你懂的,需要记忆</td>
+</tr>
+<tr>
+<td style="text-align:left">短整型</td>
+<td style="text-align:left">short</td>
+<td style="text-align:left">2个字节</td>
+<td style="text-align:left">-2^15 到 2^15-1,下面的int,long都可以仿照上面推出来</td>
+</tr>
+<tr>
+<td style="text-align:left">整型</td>
+<td style="text-align:left">int（默认）</td>
+<td style="text-align:left">4个字节</td>
+<td style="text-align:left">-2^31 到 2^31-1</td>
+</tr>
+<tr>
+<td style="text-align:left">长整型</td>
+<td style="text-align:left">long</td>
+<td style="text-align:left">8个字节</td>
+<td style="text-align:left">-2^63 到 2^63-1</td>
+</tr>
+<tr>
+<td style="text-align:left">双精度浮点数</td>
+<td style="text-align:left">double（默认）</td>
+<td style="text-align:left">8个字节</td>
+<td style="text-align:left">4.9E-324 到 1.7977E+308,要知道小数的范围用于比整数大即可</td>
+</tr>
+<tr>
+<td style="text-align:left">单精度浮点数</td>
+<td style="text-align:left">float</td>
+<td style="text-align:left">4个字节</td>
+<td style="text-align:left">1.4013E-45 到 3.4028E+38,要知道小数的范围用于比整数大即可</td>
+</tr>
+<tr>
+<td style="text-align:left">字符型</td>
+<td style="text-align:left">char</td>
+<td style="text-align:left">2个字节</td>
+<td style="text-align:left">0 到 65535,需要记忆</td>
+</tr>
+<tr>
+<td style="text-align:left">布尔类型</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">没有指定</td>
+<td style="text-align:left">true，false,注意Java里面没有指定布尔类型的字节大小,后面强制类型转换的时候,证明,没有指定字节大小,后面学!!!</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>Java中的默认类型：整数类型是<code>int</code> 、浮点类型是<code>double</code> 。</p>
+<p>另外关于上面的E的意思,在科学计数法中，为了使公式简便，可以用带“E”的格式<em>表示</em>。</p>
+<p>例如<strong>1.03乘10的8次方，可简写为“1.03<em>E</em>+08”的形式</strong> </p>
+</blockquote>
+<h2 id="5-3-变量的定义"><a href="#5-3-变量的定义" class="headerlink" title="5.3 变量的定义"></a>5.3 变量的定义</h2><p>变量定义的格式包括三个要素：<code>数据类型</code> 、 <code>变量名</code> 、 <code>数据值</code> 。</p>
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">格式<span class="number">1</span>:数据类型 变量名 = 数据值;如<span class="keyword">int</span> a = <span class="number">666</span>;</span><br><span class="line">格式<span class="number">2</span>:数据类型 变量名;变量名 = 数据值;如<span class="keyword">int</span> b;b=<span class="number">888</span>;b=<span class="number">222</span>;</span><br><span class="line"><span class="comment">//其实从格式上可以看出,变量不单是可以发生变量的量,还是个容器,用来装数据//记忆</span></span><br></pre></td></tr></table></figure>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p>定义所有基本数据类型的变量，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Variable</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 定义字节型变量</span></span><br><span class="line">        <span class="keyword">byte</span> b = <span class="number">100</span>;</span><br><span class="line">        System.out.println(b);<span class="comment">//系统输出打印b的值,使用变量,指的是通过变量名得到它存的数据值</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//变量赋值：定义的变量，不赋值不能使用(使用变量,指的是通过变量名得到数据值)</span></span><br><span class="line">        <span class="keyword">byte</span> b2;</span><br><span class="line">        <span class="comment">//b2 = 6;</span></span><br><span class="line">        <span class="comment">//System.out.println(b2);//</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 定义短整型变量</span></span><br><span class="line">        <span class="keyword">short</span> s = <span class="number">1000</span>;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        <span class="comment">// 定义整型变量</span></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">123456</span>;</span><br><span class="line">        System.out.println(i);</span><br><span class="line">        <span class="comment">// 定义长整型变量</span></span><br><span class="line">        <span class="keyword">long</span> l = <span class="number">12345678900L</span>;</span><br><span class="line">        System.out.println(l);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 定义双精度浮点型变量</span></span><br><span class="line">        <span class="keyword">double</span> d = <span class="number">8.5</span>;</span><br><span class="line">        System.out.println(d);</span><br><span class="line">        <span class="comment">// 定义单精度浮点型变量</span></span><br><span class="line">        <span class="keyword">float</span> f = <span class="number">5.5F</span>;</span><br><span class="line">        System.out.println(f);</span><br><span class="line">       </span><br><span class="line">        <span class="comment">// 定义字符型变量</span></span><br><span class="line">        <span class="keyword">char</span> c = <span class="string">'A'</span>;</span><br><span class="line">        System.out.println(c);</span><br><span class="line">        <span class="comment">// 定义布尔型变量</span></span><br><span class="line">        <span class="keyword">boolean</span> bool = <span class="keyword">false</span>;<span class="comment">//在同一个大括号范围内，变量的名字不可以相同。所以这里不叫b,改为其他名字</span></span><br><span class="line">        System.out.println(bool);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>long类型：建议数据后加L表示。大小写l都一样,大写好看点</p>
+<p>float类型：建议数据后加F表示。大小写f都一样,大写好看点</p>
+<p>巧记,有尾巴,服了,fl</p>
+</blockquote>
+<h2 id="5-4-注意事项"><a href="#5-4-注意事项" class="headerlink" title="5.4 注意事项"></a>5.4 注意事项</h2><ul>
+<li>变量名称：在同一个大括号范围内，变量的名字不可以相同。</li>
+<li>变量赋值：定义的变量，不赋值不能使用(使用变量,指的是通过变量名得到数据值)</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Dubliner</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/12/day01【前言、入门程序、常量、变量】/">http://yoursite.com/2019/12/day01【前言、入门程序、常量、变量】/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><nav id="pagination"><div class="next-post pull-right"><a href="/2019/12/day02 【数据类型转换、运算符、方法入门】/"><span>day02 【数据类型转换、运算符、方法入门】</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2019 By Dubliner</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>
